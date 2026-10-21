@@ -1,0 +1,13 @@
+services:
+  holehe:
+    image: python:3.11-slim
+    command:
+      - sh
+      - -c
+      - >-
+        python -m pip install --no-cache-dir --upgrade
+        https://github.com/hoangthang0106/holehe/archive/refs/heads/master.zip
+        && exec tail -f /dev/null
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
