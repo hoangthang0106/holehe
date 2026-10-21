@@ -39,6 +39,15 @@ docker build . -t my-holehe-image
 docker run my-holehe-image holehe test@gmail.com
 ```
 
+## Deploy with Portainer from Git
+
+1. In Portainer, choose **Stacks → Add stack → Git repository**.
+2. Set the repository URL to `https://github.com/hoangthang0106/holehe`, reference to `master`, and Compose path to `docker-compose.yml`, then deploy.
+3. Open the running `holehe` container's console using `/bin/sh`, then run `holehe YOUR_EMAIL`.
+4. After updating the fork's `master` branch, choose **Pull and redeploy** for the stack. The container installs the current fork version when it starts.
+
+This keeps the command-line tool available for use in the Portainer console; it does not add a web interface. Use only with email addresses you own or are authorized to assess.
+
 ## Quick Start
 
 Holehe can be run from the CLI and rapidly embedded within existing python applications.
